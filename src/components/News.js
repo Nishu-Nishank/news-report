@@ -61,8 +61,8 @@ export class News extends Component {
       <div className="container my-3">
         <h2 className="text-center" style={{margin:'35px 0px',marginTop:'65px'}}>NewsDuniya - Top Headlines from <label className="text-capitalize">{this.props.category}</label></h2> 
          <div className="row my-3">
-         {this.state.loading && <Spinner/>}
-          {!this.state.loading && this.state.articles.map((element) => {
+         {this.state?.loading && <Spinner/>}
+          {!this.state?.loading && this.state?.articles?.map((element) => {
             return (
               <div className="col-md-4"  key={element.url}>
                 <NewsItem
@@ -76,8 +76,8 @@ export class News extends Component {
           })}
         </div>
         <div className="container d-flex justify-content-between my-3">
-            <button disabled={this.state.page<=1} type="button" className="btn btn-dark mx-2" onClick={this.handlePreviousClick}>&laquo;Previous</button>
-            <button disabled={this.state.page+1>Math.ceil(this.state.totalResults/20)} type="button" className="btn btn-dark mx-2" onClick={this.handleNextClick}>Next &raquo;</button>
+            <button disabled={this.state?.page<=1} type="button" className="btn btn-dark mx-2" onClick={this.handlePreviousClick}>&laquo;Previous</button>
+            <button disabled={this.state?.page+1>Math.ceil(this.state?.totalResults/20)} type="button" className="btn btn-dark mx-2" onClick={this.handleNextClick}>Next &raquo;</button>
         </div>
         <footer class="page-footer font-small blue">
             <div className="footer-copyright text-center py-3"><b>© 2022 Copyright: News Duniya</b><br/><b>By: Nishu Nishank</b>
